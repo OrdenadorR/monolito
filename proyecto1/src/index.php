@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+
 <?php
 $basePath = '/';
 
@@ -14,14 +23,12 @@ $router = new RouteCollector();
 //Definición de rutas:
 
 $router->get('/', function () {
-    include "views/template/header.php";
     include "views/template/menu.php";
     include "views/template/login.php";
     include "views/template/footer.php";
 });
 
 $router->get('/bucle', function () {
-    include "views/template/header.php";
     include "views/template/menu.php";
     include "views/bucle.php";
     include "views/template/footer.php";

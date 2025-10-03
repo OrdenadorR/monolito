@@ -50,6 +50,7 @@ body {
 
 .sidebar a:hover {
     background: var(--color5);
+    color: var(--color2);
 }
 
 main.content {
