@@ -1,0 +1,115 @@
+:root {
+    /* 4 colores base */
+    --color1: #2c3e50;  /* color oscuro principal */
+    --color2: #ecf0f1;  /* color claro / texto */
+    --color3: #34495e;  /* color intermedio / hover */
+    --color4: #007bff;  /* color azul / botón */
+}
+
+body {
+    font-family: Calibri, Arial, sans-serif;
+    background: var(--color1);
+    margin: 0;
+    color: var(--color2);
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    min-height: 90vh;
+}
+
+/* Sidebar */
+.sidebar {
+    min-width: 320px;
+    background: var(--color3);
+    color: var(--color2);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h1 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.sidebar ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: var(--color2);
+    font-weight: bold;
+    display: block;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.sidebar a:hover {
+    background: var(--color3);
+}
+
+/* ===== LOGIN ===== */
+main.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--color1);
+}
+
+.login-box {
+    width: 320px;
+    padding: 30px;
+    background: var(--color2);
+    border-radius: 8px;
+    border: none;
+}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    color: var(--color1);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: var(--color1);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid var(--color3);
+    background: var(--color2);
+    color: var(--color1);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: var(--color4);
+    color: var(--color2);
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--color3);
+}

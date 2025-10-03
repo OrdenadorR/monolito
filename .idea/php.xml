@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MessDetector">
+    <phpmd_settings>
+      <phpmd_by_interpreter asDefaultInterpreter="true" interpreter_id="70c2b7c0-5121-413d-94ed-83651e043193" timeout="30000" />
+    </phpmd_settings>
+  </component>
+  <component name="MessDetectorOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCSFixerOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PHPCodeSnifferOptionsConfiguration">
+    <option name="highlightLevel" value="WARNING" />
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpCodeSniffer">
+    <phpcs_settings>
+      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="70c2b7c0-5121-413d-94ed-83651e043193" timeout="30000" />
+    </phpcs_settings>
+  </component>
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/proyecto1/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/composer" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/composer" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/phroute/phroute" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/proyecto1/src/vendor/carbonphp/carbon-doctrine-types" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpStanOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/proyecto1/src/vendor/autoload.php" />
+    </phpunit_settings>
+  </component>
+  <component name="PsalmOptionsConfiguration">
+    <option name="transferred" value="true" />
+  </component>
+</project>
