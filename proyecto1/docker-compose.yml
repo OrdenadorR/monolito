@@ -7,10 +7,11 @@ services:
       dockerfile: Dockerfile
     container_name: pila_php
 
-    user: 1000:1000
+#    user: 1000:1000
 
     volumes:
       - ./src:/var/www/html
+      - ./vendor:/var/www/vendor
       - .docker/apache/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
       - .docker/php/php.ini:/usr/local/etc/php/php.ini-development
       - .docker/xdebug/debug.ini:/usr/local/etc/php/conf.d/debug.ini
@@ -36,7 +37,7 @@ services:
       - .docker/mariadb:/var/lib/mysql:Z
 
     ports:
-      - 3306:3306
+      - 3307:3306
 
     networks:
       - proyecto1
@@ -57,7 +58,7 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: toor
     ports:
-      - 27017:27017
+      - 27018:27017
     networks:
       - proyecto1
 

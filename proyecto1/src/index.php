@@ -2,7 +2,9 @@
 $basePath = '/';
 
 // Autoload de Composer (Phroute)
-require_once 'vendor/autoload.php';
+// require_once '../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+
 
 use Phroute\Phroute\RouteCollector;
 
@@ -10,6 +12,7 @@ use Phroute\Phroute\RouteCollector;
 $router = new RouteCollector();
 
 //Definición de rutas:
+
 $router->get('/', function () {
     include "views/template/header.php";
     include "views/template/menu.php";

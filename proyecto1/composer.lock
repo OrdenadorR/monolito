@@ -1,9 +1,14 @@
 {
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "e2eaa7405e740c616defeb00d557e147",
     "packages": [
         {
             "name": "carbonphp/carbon-doctrine-types",
             "version": "3.2.0",
-            "version_normalized": "3.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon-doctrine-types.git",
@@ -26,9 +31,7 @@
                 "nesbot/carbon": "^2.71.0 || ^3.0.0",
                 "phpunit/phpunit": "^10.3"
             },
-            "time": "2024-02-09T16:56:22+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Carbon\\Doctrine\\": "src/Carbon/Doctrine/"
@@ -70,12 +73,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../carbonphp/carbon-doctrine-types"
+            "time": "2024-02-09T16:56:22+00:00"
         },
         {
             "name": "nesbot/carbon",
             "version": "3.10.3",
-            "version_normalized": "3.10.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/CarbonPHP/carbon.git",
@@ -110,7 +112,6 @@
                 "phpunit/phpunit": "^10.5.53",
                 "squizlabs/php_codesniffer": "^3.13.4"
             },
-            "time": "2025-09-06T13:39:36+00:00",
             "bin": [
                 "bin/carbon"
             ],
@@ -131,7 +132,6 @@
                     "dev-master": "3.x-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Carbon\\": "src/Carbon/"
@@ -178,12 +178,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../nesbot/carbon"
+            "time": "2025-09-06T13:39:36+00:00"
         },
         {
             "name": "phroute/phroute",
             "version": "v2.2.0",
-            "version_normalized": "2.2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mrjgreen/phroute.git",
@@ -202,9 +201,7 @@
                 "php-coveralls/php-coveralls": "^2.5",
                 "phpunit/phpunit": "^9.0"
             },
-            "time": "2022-05-04T16:22:33+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Phroute\\Phroute\\": "src/Phroute"
@@ -229,12 +226,11 @@
                 "issues": "https://github.com/mrjgreen/phroute/issues",
                 "source": "https://github.com/mrjgreen/phroute/tree/v2.2.0"
             },
-            "install-path": "../phroute/phroute"
+            "time": "2022-05-04T16:22:33+00:00"
         },
         {
             "name": "psr/clock",
             "version": "1.0.0",
-            "version_normalized": "1.0.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/clock.git",
@@ -249,9 +245,7 @@
             "require": {
                 "php": "^7.0 || ^8.0"
             },
-            "time": "2022-11-25T14:36:26+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Psr\\Clock\\": "src/"
@@ -280,12 +274,11 @@
                 "issues": "https://github.com/php-fig/clock/issues",
                 "source": "https://github.com/php-fig/clock/tree/1.0.0"
             },
-            "install-path": "../psr/clock"
+            "time": "2022-11-25T14:36:26+00:00"
         },
         {
             "name": "symfony/clock",
             "version": "v7.3.0",
-            "version_normalized": "7.3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/clock.git",
@@ -305,9 +298,7 @@
             "provide": {
                 "psr/clock-implementation": "1.0"
             },
-            "time": "2024-09-25T14:21:43+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "Resources/now.php"
@@ -357,12 +348,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/clock"
+            "time": "2024-09-25T14:21:43+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
             "version": "v3.6.0",
-            "version_normalized": "3.6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/deprecation-contracts.git",
@@ -377,7 +367,6 @@
             "require": {
                 "php": ">=8.1"
             },
-            "time": "2024-09-25T14:21:43+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -388,7 +377,6 @@
                     "dev-main": "3.6-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "function.php"
@@ -427,12 +415,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/deprecation-contracts"
+            "time": "2024-09-25T14:21:43+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.33.0",
-            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -454,7 +441,6 @@
             "suggest": {
                 "ext-mbstring": "For best performance"
             },
-            "time": "2024-12-23T08:48:59+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -462,7 +448,6 @@
                     "name": "symfony/polyfill"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -515,12 +500,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-mbstring"
+            "time": "2024-12-23T08:48:59+00:00"
         },
         {
             "name": "symfony/polyfill-php83",
             "version": "v1.33.0",
-            "version_normalized": "1.33.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php83.git",
@@ -535,7 +519,6 @@
             "require": {
                 "php": ">=7.2"
             },
-            "time": "2025-07-08T02:45:35+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -543,7 +526,6 @@
                     "name": "symfony/polyfill"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "bootstrap.php"
@@ -598,12 +580,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/polyfill-php83"
+            "time": "2025-07-08T02:45:35+00:00"
         },
         {
             "name": "symfony/translation",
             "version": "v7.3.4",
-            "version_normalized": "7.3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -650,9 +631,7 @@
                 "symfony/service-contracts": "^2.5|^3",
                 "symfony/yaml": "^6.4|^7.0"
             },
-            "time": "2025-09-07T11:39:36+00:00",
             "type": "library",
-            "installation-source": "dist",
             "autoload": {
                 "files": [
                     "Resources/functions.php"
@@ -701,12 +680,11 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/translation"
+            "time": "2025-09-07T11:39:36+00:00"
         },
         {
             "name": "symfony/translation-contracts",
             "version": "v3.6.0",
-            "version_normalized": "3.6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation-contracts.git",
@@ -721,7 +699,6 @@
             "require": {
                 "php": ">=8.1"
             },
-            "time": "2024-09-27T08:32:26+00:00",
             "type": "library",
             "extra": {
                 "thanks": {
@@ -732,7 +709,6 @@
                     "dev-main": "3.6-dev"
                 }
             },
-            "installation-source": "dist",
             "autoload": {
                 "psr-4": {
                     "Symfony\\Contracts\\Translation\\": ""
@@ -782,9 +758,16 @@
                     "type": "tidelift"
                 }
             ],
-            "install-path": "../symfony/translation-contracts"
+            "time": "2024-09-27T08:32:26+00:00"
         }
     ],
-    "dev": true,
-    "dev-package-names": []
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {},
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {},
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

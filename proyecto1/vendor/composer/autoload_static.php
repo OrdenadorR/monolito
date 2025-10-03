@@ -26,6 +26,7 @@ class ComposerStaticInit889f831e09da48cb8affe8b66f071284
         'P' => 
         array (
             'Psr\\Clock\\' => 10,
+            'Phroute\\Phroute\\' => 16,
         ),
         'C' => 
         array (
@@ -58,6 +59,10 @@ class ComposerStaticInit889f831e09da48cb8affe8b66f071284
         'Psr\\Clock\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/clock/src',
+        ),
+        'Phroute\\Phroute\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phroute/phroute/src/Phroute',
         ),
         'Carbon\\Doctrine\\' => 
         array (

@@ -1,5 +1,5 @@
 <aside class="sidebar">
-    <h1>(Usuario)</h1>
+    <h1><a href="/bucle">LOGO</a></h1>
     <ol>
         <li>
             <a href="/bucle">Creación de un bucle en php</a>
