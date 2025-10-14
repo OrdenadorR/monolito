@@ -1,54 +1,49 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<div class="container">
-
 <?php
 $basePath = '/';
 
-// Autoload de Composer (Phroute)
-// require_once '../vendor/autoload.php';
+// Autoload Composer
 require_once __DIR__ . '/../vendor/autoload.php';
-
 
 use Phroute\Phroute\RouteCollector;
 
-// Creación del Router:
 $router = new RouteCollector();
 
-//Definición de rutas:
-
 $router->get('/', function () {
+    include "views/template/header.php";
+    include "views/template/menu.php";
+    include "views/template/footer.php";
+});
+
+$router->get('/login', function () {
+    include "views/template/header.php";
     include "views/template/menu.php";
     include "views/template/login.php";
     include "views/template/footer.php";
 });
 
-$router->get('/bucle', function () {
-    include "views/template/menu.php";
-    include "views/bucle.php";
-    include "views/template/footer.php";
+$router->post('/login', function () {
+    $user = $_POST['username'] ?? null;
+    $password = $_POST['password'] ?? null;
+
+    if ($user && $password) {
+        // Ruta al archivo de usuarios
+        $loginFile = __DIR__ . '/logins/users.txt';
+
+        // Guardamos en formato "user:password" (ojo: no es seguro guardar en texto plano)
+        $line = $user . ':' . password_hash($password, PASSWORD_DEFAULT) . PHP_EOL;
+
+        // Añadimos al archivo
+        file_put_contents($loginFile, $line, FILE_APPEND | LOCK_EX);
+
+        echo "Usuario guardado correctamente.";
+    } else {
+        echo "Faltan datos de usuario o contraseña.";
+    }
 });
 
-$router->get('/passwordGenerator', function () {
-    include "views/passwordGenerator.php";
-});
-
-$router->post('/passwordGenerator', function () {
-    include "views/passwordGenerator.php";
-});
-
-// -------------------------
-// Dispatcher
-// -------------------------
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
-// Obtener la ruta actual y eliminar el subdirectorio si aplica
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 if ($basePath !== '/' && str_starts_with($path, $basePath)) {
     $path = substr($path, strlen($basePath));
@@ -57,16 +52,13 @@ if ($path === '') $path = '/';
 
 try {
     $response = $dispatcher->dispatch($_SERVER['REQUEST_METHOD'], $path);
-    // Si la función devuelve algo, imprimirlo
     if ($response !== null) {
         echo $response;
     }
 } catch (Phroute\Phroute\Exception\HttpRouteNotFoundException $e) {
-    // 404 simple
     http_response_code(404);
     echo "Página no encontrada";
 } catch (Phroute\Phroute\Exception\HttpMethodNotAllowedException $e) {
-    // 405 simple
     http_response_code(405);
     echo "Método HTTP no permitido";
 }

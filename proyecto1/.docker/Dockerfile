@@ -51,3 +51,7 @@ RUN pecl install xdebug && docker-php-ext-enable xdebug
 RUN composer global require phpunit/phpunit && ln -s /var/www/html/vendor/bin/phpunit /usr/local/bin/phpunit
 
 
+
+RUN mkdir -p /var/www/html/logins && chown -R www-data:www-data /var/www/html/logins
+RUN chmod -R 775 /var/www/html/logins
+

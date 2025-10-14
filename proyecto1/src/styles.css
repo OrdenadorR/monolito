@@ -8,7 +8,7 @@
 
 body {
     font-family: Calibri, Arial, sans-serif;
-    background: var(--color2);
+    background: var(--color4);
     margin: 0;
 }
 
@@ -25,17 +25,16 @@ body {
     box-sizing: border-box;
 }
 
+.sidebar ol {
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+
 .sidebar h1 {
     font-size: 18px;
     margin-bottom: 20px;
 }
-
-.sidebar ol {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
 .sidebar a {
     text-decoration: none;
     color: var(--color5);
@@ -56,15 +55,18 @@ main.content {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    min-width: 100vh;
+    min-width: 160vh;
+    margin: 32px;
+    border-radius: 32px;
+    background-color: var(--color2);
 }
 
 .login-box {
     width: 320px;
     padding: 30px;
     background: var(--color2);
+    border: 1px solid #808080;
     border-radius: 8px;
-    border: none;
 }
 
 .login-box h2 {
