@@ -2,11 +2,14 @@
 $basePath = '/';
 
 // Autoload Composer
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
+use App\Controller\UserController;
 use Phroute\Phroute\RouteCollector;
 
 $router = new RouteCollector();
+
+$router->get('/usercon', [UserController::class, 'index']);
 
 $router->get('/', function () {
     include "views/template/header.php";
@@ -40,6 +43,7 @@ $router->post('/login', function () {
         echo "Faltan datos de usuario o contraseña.";
     }
 });
+
 
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());

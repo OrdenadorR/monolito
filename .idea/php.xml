@@ -22,16 +22,6 @@
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
-      <path value="$PROJECT_DIR$/proyecto1/vendor/carbonphp/carbon-doctrine-types" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/composer" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/nesbot/carbon" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/psr/clock" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/clock" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/deprecation-contracts" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/polyfill-php83" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/translation" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/proyecto1/src/vendor/composer" />
       <path value="$PROJECT_DIR$/proyecto1/src/vendor/psr/clock" />
       <path value="$PROJECT_DIR$/proyecto1/src/vendor/brick/math" />
@@ -46,10 +36,9 @@
       <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/translation" />
       <path value="$PROJECT_DIR$/proyecto1/src/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/proyecto1/src/vendor/carbonphp/carbon-doctrine-types" />
-      <path value="$PROJECT_DIR$/proyecto1/vendor/phroute/phroute" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>

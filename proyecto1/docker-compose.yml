@@ -7,8 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: pila_php
 
-#    user: 1000:1000
-    user: ciclost:ciclost
+    #user: ciclost:ciclost
 
     volumes:
       - ./src:/var/www/html
