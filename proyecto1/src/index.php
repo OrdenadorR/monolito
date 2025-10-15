@@ -10,6 +10,7 @@ use Phroute\Phroute\RouteCollector;
 $router = new RouteCollector();
 
 $router->get('/usercon', [UserController::class, 'index']);
+$router->get('show', [UserController::class, 'show']);
 
 $router->get('/', function () {
     include "views/template/header.php";

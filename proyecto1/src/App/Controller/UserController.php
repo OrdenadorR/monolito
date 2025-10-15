@@ -14,7 +14,8 @@ class UserController implements ControllerInterface
 
     function show($id)
     {
-        // TODO: Implement show() method.
+        //
+        return "Hola" + $id;
     }
 
     function store()
