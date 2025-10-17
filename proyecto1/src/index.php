@@ -3,6 +3,7 @@ $basePath = '/';
 
 // Autoload Composer
 require_once 'vendor/autoload.php';
+require 'App/Controller/UserController.php';
 
 use App\Controller\UserController;
 use Phroute\Phroute\RouteCollector;
@@ -10,6 +11,8 @@ use Phroute\Phroute\RouteCollector;
 $router = new RouteCollector();
 
 $router->get('/usercon', [UserController::class, 'index']);
+$router->get('/usercon/{id}', [UserController::class, 'show']);
+$router->delete('usercon/{id}', [UserController::class, 'destroy']);
 $router->get('show', [UserController::class, 'show']);
 
 $router->get('/', function () {
@@ -33,8 +36,7 @@ $router->post('/login', function () {
         // Ruta al archivo de usuarios
         $loginFile = __DIR__ . '/logins/users.txt';
 
-        // Guardamos en formato "user:password" (ojo: no es seguro guardar en texto plano)
-        $line = $user . ':' . password_hash($password, PASSWORD_DEFAULT) . PHP_EOL;
+        $line = $user . ':' . $password . PHP_EOL;
 
         // Añadimos al archivo
         file_put_contents($loginFile, $line, FILE_APPEND | LOCK_EX);

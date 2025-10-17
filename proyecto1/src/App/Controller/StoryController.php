@@ -17,17 +17,17 @@ class StoryController implements ControllerInterface
         // TODO: Implement show() method.
     }
 
-    function store()
+    function store(array $dataToStore)
     {
         // TODO: Implement store() method.
     }
 
-    function update()
+    function update($id)
     {
         // TODO: Implement update() method.
     }
 
-    function destroy()
+    function destroy($id)
     {
         // TODO: Implement destroy() method.
     }

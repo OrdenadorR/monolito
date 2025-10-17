@@ -18,19 +18,25 @@ class UserController implements ControllerInterface
         return "Hola" + $id;
     }
 
-    function store()
+    function store(array $dataToStore)
     {
-        // TODO: Implement store() method.
+        if(empty($dataToStore['username']) || $dataToStore['password']){
+            return 'Faltan datos';
+        }
+
+        return 'Función en UserController accediendo';
+
+
     }
 
-    function update()
+    function update($id)
     {
         // TODO: Implement update() method.
     }
 
-    function destroy()
+    function destroy($id)
     {
-        // TODO: Implement destroy() method.
+        return "Voy a destruir el director con id $id";
     }
 
     function create()

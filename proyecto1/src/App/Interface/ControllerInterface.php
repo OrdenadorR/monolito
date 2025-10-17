@@ -8,11 +8,11 @@ interface ControllerInterface
 
     function show($id);
 
-    function store();
+    function store(array $dataToStore);
 
-    function update();
+    function update($id);
 
-    function destroy();
+    function destroy($id);
 
     function create();
 
