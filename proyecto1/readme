@@ -1,0 +1,6 @@
+RA que se mantenga la información en los formularios si se reinicia.
+
+Hace falta parsear los datos para los enums (ver captura).
+
+Para peticiones 'put':
+parse_str(file_get_contents('php://input'), $_POST);

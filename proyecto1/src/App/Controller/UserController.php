@@ -3,18 +3,24 @@
 namespace App\Controller;
 
 use App\Interface\ControllerInterface;
+use App\Class\User;
+use App\Enum\UserType;
+use App\Model\UserModel;
+use Ramsey\Uuid\Uuid;
+use Respect\Validation\Validator;
 
 class UserController implements ControllerInterface
 {
 
     function index()
     {
-        return "Hola";
+        $usuarios = UserModel::getAllUsers();
+        var_dump($usuarios);
+
     }
 
     function show($id)
     {
-        //
         return "Hola" + $id;
     }
 
@@ -31,7 +37,8 @@ class UserController implements ControllerInterface
 
     function update($id)
     {
-        // TODO: Implement update() method.
+        parse_str(file_get_contents('php://input'), $_POST);
+        var_dump($_POST);
     }
 
     function destroy($id)
