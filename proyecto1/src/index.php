@@ -3,30 +3,39 @@ $basePath = '/';
 
 // Autoload Composer
 require_once 'vendor/autoload.php';
+require 'App/Interface/ControllerInterface.php';
 require 'App/Controller/UserController.php';
 
 use App\Controller\UserController;
 use Phroute\Phroute\RouteCollector;
 
+session_start();
+/* Guarda en $_SESSION y devuelve al cliente PHPID
+que guarda como una cookie*/
+
 $router = new RouteCollector();
 
-$router->get('/usercon', [UserController::class, 'index']);
+$router->get('/register', [UserController::class, 'showRegister']);
+
+
 $router->get('/usercon/{id}', [UserController::class, 'show']);
 $router->delete('usercon/{id}', [UserController::class, 'destroy']);
 $router->get('show', [UserController::class, 'show']);
 
 $router->get('/', function () {
-    include "views/template/header.php";
-    include "views/template/menu.php";
-    include "views/template/footer.php";
+    include "App/Views/frontend/header.php";
+    include "App/Views/frontend/menu.php";
+    include "App/Views/frontend/footer.php";
 });
 
 $router->get('/login', function () {
-    include "views/template/header.php";
-    include "views/template/menu.php";
-    include "views/template/login.php";
-    include "views/template/footer.php";
+    include "App/Views/frontend/header.php";
+    include "App/Views/frontend/menu.php";
+    include "App/Views/frontend/login.php";
+    include "App/Views/frontend/footer.php";
 });
+
+$router->post('/user/login', [UserController::class, 'verify']);
 
 $router->post('/login', function () {
     $user = $_POST['username'] ?? null;

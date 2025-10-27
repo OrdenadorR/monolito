@@ -37,4 +37,9 @@ class User implements \JsonSerializable
             'visualizaciones' => $this->visualizaciones,
         ];
     }
+
+//    public static function validateUserEdit(array $userData):User|array {
+//
+//        return array;
+//    }
 }

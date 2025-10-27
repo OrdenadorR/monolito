@@ -3,8 +3,7 @@
     <ol>
         <li>
             <a href="/login">Conéctate</a>
-            <a href="/bucle">Creación de un bucle en php</a>
-            <a href="/passwordGenerator">Generador de contraseñas</a>
+            <a href="/register">Registrarse</a>
         </li>
     </ol>
 </aside>

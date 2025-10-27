@@ -8,6 +8,8 @@ use App\Enum\UserType;
 use App\Model\UserModel;
 use Ramsey\Uuid\Uuid;
 use Respect\Validation\Validator;
+use App\Views\frontend\login;
+use App\views\template\header;
 
 class UserController implements ControllerInterface
 {
@@ -21,6 +23,12 @@ class UserController implements ControllerInterface
 
     function show($id)
     {
+        if (isset($_SESSION['username'])){
+            //Muestro la vista con lso datos del usuario.
+        }
+        else {
+            //Muestro una vista de que no se puede acceder a estos datos.
+        }
         return "Hola" + $id;
     }
 
@@ -37,6 +45,7 @@ class UserController implements ControllerInterface
 
     function update($id)
     {
+        //Lee del fichero input los datos que llegan en la petición PUT
         parse_str(file_get_contents('php://input'), $_POST);
         var_dump($_POST);
     }
@@ -54,5 +63,30 @@ class UserController implements ControllerInterface
     function edit($id)
     {
         // TODO: Implement edit() method.
+    }
+
+    function verify() {
+        $_POST['username'];
+        $_POST['password'];
+
+        $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        var_dump(password_verify($_POST['password'], $hash));
+        # Petición a la base de datos para comprobar si el usuario existe.
+
+        $idUsuario = "5656"; // Número para pruebas
+        // si es correcto el login
+        $_SESSION['username']=$_POST['username'];
+        $_SESSION['uuid']=$idUsuario;
+    }
+
+    function showRegister(){
+        include_once "App/Views/frontend/menu.php";
+        include_once "App/Views/frontend/header.php";
+        include_once "App/Views/frontend/register.php";
+        include_once "App/Views/frontend/footer.php";
+    }
+
+    function logout() {
+        session_destroy();
     }
 }
