@@ -9,56 +9,40 @@ require 'App/Controller/UserController.php';
 use App\Controller\UserController;
 use Phroute\Phroute\RouteCollector;
 
-session_start();
-/* Guarda en $_SESSION y devuelve al cliente PHPID
-que guarda como una cookie*/
+session_start(); // Inicia la sesión y mantiene PHPSESSID
 
 $router = new RouteCollector();
 
-$router->get('/register', [UserController::class, 'showRegister']);
+$router->get('/register-form', [UserController::class, 'showRegister']); // Mostrar formulario de registro
+$router->post('/register', function () { // Procesar registro
+    $controller = new App\Controller\UserController();
+    return $controller->store($_POST);
+});
+
+$router->get('/login', [UserController::class, 'showLogin']);
+$router->post('/login', [UserController::class, 'login']); // Login de usuario
 
 
-$router->get('/usercon/{id}', [UserController::class, 'show']);
-$router->delete('usercon/{id}', [UserController::class, 'destroy']);
-$router->get('show', [UserController::class, 'show']);
+$router->get('/usercon/{id}', [UserController::class, 'show']); // Mostrar usuario por ID
+$router->delete('usercon/{id}', [UserController::class, 'destroy']); // Borrar usuario por ID
+$router->get('show', [UserController::class, 'show']); // Mostrar todos los usuarios (ejemplo)
 
-$router->get('/', function () {
+$router->get('/', function () { // Página principal
     include "App/Views/frontend/header.php";
     include "App/Views/frontend/menu.php";
     include "App/Views/frontend/footer.php";
 });
 
-$router->get('/login', function () {
-    include "App/Views/frontend/header.php";
-    include "App/Views/frontend/menu.php";
-    include "App/Views/frontend/login.php";
-    include "App/Views/frontend/footer.php";
-});
+//$router->get('/login', function () { // Mostrar formulario de login
+//    include "App/Views/frontend/header.php";
+//    include "App/Views/frontend/menu.php";
+//    include "App/Views/frontend/login.php";
+//    include "App/Views/frontend/footer.php";
+//});
 
-$router->post('/user/login', [UserController::class, 'verify']);
+$router->post('/user/login', [UserController::class, 'verify']); // Verificar login
 
-$router->post('/login', function () {
-    $user = $_POST['username'] ?? null;
-    $password = $_POST['password'] ?? null;
-
-    if ($user && $password) {
-        // Ruta al archivo de usuarios
-        $loginFile = __DIR__ . '/logins/users.txt';
-
-        $line = $user . ':' . $password . PHP_EOL;
-
-        // Añadimos al archivo
-        file_put_contents($loginFile, $line, FILE_APPEND | LOCK_EX);
-
-        echo "Usuario guardado correctamente.";
-    } else {
-        echo "Faltan datos de usuario o contraseña.";
-    }
-});
-
-
-
-$dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
+$dispatcher = new Phroute\Phroute\Dispatcher($router->getData()); // Despachador
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 if ($basePath !== '/' && str_starts_with($path, $basePath)) {

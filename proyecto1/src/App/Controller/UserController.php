@@ -34,14 +34,28 @@ class UserController implements ControllerInterface
 
     function store(array $dataToStore)
     {
-        if(empty($dataToStore['username']) || $dataToStore['password']){
+        $username = $dataToStore['username'] ?? null;
+        $email = $dataToStore['email'] ?? null;
+        $password = $dataToStore['password'] ?? null;
+
+        if (empty($username) || empty($password)) {
             return 'Faltan datos';
         }
 
-        return 'Función en UserController accediendo';
+        $loginFile = __DIR__ . '/../../data/users.txt';
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $line = $username . ':' . $email . ':' . $hashedPassword . PHP_EOL;
 
+        file_put_contents($loginFile, $line, FILE_APPEND | LOCK_EX);
 
+        // Guardamos datos en sesión (ya iniciada desde index.php)
+        $_SESSION['username'] = $username;
+        $_SESSION['logged_in'] = true;
+
+        header("Location: /");
+        exit;
     }
+
 
     function update($id)
     {
@@ -77,6 +91,14 @@ class UserController implements ControllerInterface
         // si es correcto el login
         $_SESSION['username']=$_POST['username'];
         $_SESSION['uuid']=$idUsuario;
+    }
+
+    function showLogin()
+    {
+        include_once "App/Views/frontend/header.php";
+        include_once "App/Views/frontend/menu.php";
+        include_once "App/Views/frontend/login.php";
+        include_once "App/Views/frontend/footer.php";
     }
 
     function showRegister(){

@@ -3,7 +3,7 @@
     <ol>
         <li>
             <a href="/login">Conéctate</a>
-            <a href="/register">Registrarse</a>
+            <a href="/register-form">Registrarse</a>
         </li>
     </ol>
 </aside>
