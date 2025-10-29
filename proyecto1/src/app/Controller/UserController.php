@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Interface\ControllerInterface;
-use App\Class\User;
 use App\Enum\UserType;
 use App\Model\UserModel;
 use Ramsey\Uuid\Uuid;
@@ -79,33 +78,66 @@ class UserController implements ControllerInterface
         // TODO: Implement edit() method.
     }
 
-    function verify() {
-        $_POST['username'];
-        $_POST['password'];
+    public function verify() {
+        // Capturamos los datos enviados por POST
+        $username = $_POST['username'] ?? '';
+        $password = $_POST['password'] ?? '';
 
-        $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
-        var_dump(password_verify($_POST['password'], $hash));
-        # Petición a la base de datos para comprobar si el usuario existe.
+        echo "<pre>";
+        echo "Datos recibidos:\n";
+        var_dump(['username' => $username, 'password' => $password]);
 
-        $idUsuario = "5656"; // Número para pruebas
-        // si es correcto el login
-        $_SESSION['username']=$_POST['username'];
-        $_SESSION['uuid']=$idUsuario;
+        // Aquí simulas la verificación en base de datos
+        // Para demo, usamos un usuario fijo
+        $usuarios = [
+            'admin' => '$2y$10$xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' // hash de ejemplo
+        ];
+
+        $resultado = [
+            'success' => false,
+            'message' => 'Usuario o contraseña no existe',
+            'user' => null
+        ];
+
+        if (isset($usuarios[$username])) {
+            // Verificamos la contraseña
+            if (password_verify($password, $usuarios[$username])) {
+                // Login correcto
+                $_SESSION['username'] = $username;
+                $_SESSION['uuid'] = Uuid::uuid4()->toString();
+
+                $resultado['success'] = true;
+                $resultado['message'] = 'Login correcto';
+                $resultado['user'] = [
+                    'username' => $username,
+                    'uuid' => $_SESSION['uuid']
+                ];
+            }
+        }
+
+        // Mostramos en pantalla
+        echo "\nResultado de login:\n";
+        var_dump($resultado);
+
+        echo "</pre>";
+
+        // También devolvemos el array para usarlo en código
+        return $resultado;
     }
 
     function showLogin()
     {
-        include_once "App/Views/frontend/header.php";
-        include_once "App/Views/frontend/menu.php";
-        include_once "App/Views/frontend/login.php";
-        include_once "App/Views/frontend/footer.php";
+        include_once "app/Views/frontend/header.php";
+        include_once "app/Views/frontend/menu.php";
+        include_once "app/Views/frontend/login.php";
+        include_once "app/Views/frontend/footer.php";
     }
 
     function showRegister(){
-        include_once "App/Views/frontend/menu.php";
-        include_once "App/Views/frontend/header.php";
-        include_once "App/Views/frontend/register.php";
-        include_once "App/Views/frontend/footer.php";
+        include_once "app/Views/frontend/header.php";
+        include_once "app/Views/frontend/menu.php";
+        include_once "app/Views/frontend/register.php";
+        include_once "app/Views/frontend/footer.php";
     }
 
     function logout() {
