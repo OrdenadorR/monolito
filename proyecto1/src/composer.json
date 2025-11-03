@@ -4,11 +4,12 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "App\\": "App/"
+            "App\\": "app/"
         }
     },
     "require": {
         "ramsey/uuid": "^4.9",
+        "respect/validation": "^2.2",
         "nesbot/carbon": "^3.10",
         "phroute/phroute": "^2.2"
     }

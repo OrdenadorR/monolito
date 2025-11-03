@@ -65,7 +65,7 @@ class UserController implements ControllerInterface
 
     function destroy($id)
     {
-        return "Voy a destruir el director con id $id";
+        return "Voy a destruir el id $id";
     }
 
     function create()

@@ -5,6 +5,7 @@ $basePath = '/';
 require_once 'vendor/autoload.php';
 require 'app/Interface/ControllerInterface.php';
 require 'app/Controller/UserController.php';
+require 'app/Model/UserModel.php';
 
 use App\Controller\UserController;
 use Phroute\Phroute\RouteCollector;
@@ -13,24 +14,24 @@ session_start(); // Inicia la sesión
 
 $router = new RouteCollector();
 
-// RUTAS REGISTRO
-$router->get('/register-form', [UserController::class, 'showRegister']); // Mostrar formulario
-$router->post('/register', function () { // Procesar registro
+// RUTAS a UserController REGISTRO
+$router->get('/user/register', [UserController::class, 'showRegister']);
+$router->post('/register', function () {
     $controller = new UserController();
     return $controller->store($_POST);
 });
 
-// RUTAS LOGIN
-$router->get('/login', [UserController::class, 'showLogin']); // Mostrar formulario
-$router->post('/login', function() { // Procesar login
+// RUTAS a UserController LOGIN
+$router->get('/user/login', [UserController::class, 'showLogin']);
+$router->post('/login', function() {
     $controller = new UserController();
     return $controller->verify();
 });
 
 // OTRAS RUTAS
-$router->get('/usercon/{id}', [UserController::class, 'show']); // Mostrar usuario por ID
-$router->delete('/usercon/{id}', [UserController::class, 'destroy']); // Borrar usuario
-$router->get('/show', [UserController::class, 'show']); // Mostrar todos los usuarios
+$router->get('/users/list', [UserController::class, 'index']);
+$router->get('/user/show/{id}', [UserController::class, 'show']);
+$router->get('/show', [UserController::class, 'show']);
 
 // PÁGINA PRINCIPAL
 $router->get('/', function () {

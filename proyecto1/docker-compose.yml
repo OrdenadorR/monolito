@@ -46,8 +46,8 @@ services:
     environment:
       MARIADB_ROOT_PASSWORD: toor
       MARIADB_DATABASE: proyecto
-      MARIADB_USER:
-      MARIADB_PASSWORD:
+      MARIADB_USER: ramon
+      MARIADB_PASSWORD: ramon
 
     command:
       --default-authentication-plugin=mysql_native_password
