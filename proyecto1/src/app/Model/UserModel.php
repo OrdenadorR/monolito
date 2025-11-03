@@ -31,7 +31,7 @@ class UserModel
 
     public static function saveUser(User $user):bool{
         try {
-            $conexion = new PDO("mysql:host=mariadb;dbname=proyecto1", "root", "toor");
+            $conexion = new PDO("mysql:host=mariadb;dbname=proyecto", "root", "toor");
 
             $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }

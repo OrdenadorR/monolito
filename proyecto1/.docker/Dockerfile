@@ -59,8 +59,10 @@ RUN pecl install xdebug && docker-php-ext-enable xdebug
 #Instalacion de PHPUnit
 RUN composer global require phpunit/phpunit && ln -s /var/www/html/vendor/bin/phpunit /usr/local/bin/phpunit
 
+# Instalación de Respect\Validation por defecto
+RUN composer require respect/validation
 
-
+# Permisos de carpeta
 RUN mkdir -p /var/www/html/logins && chown -R www-data:www-data /var/www/html/logins
 RUN chmod -R 775 /var/www/html/logins
 
